@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-image: url(images/bg.jpg) ;
+    justify-content: center;
+}
+
+.bg-colour {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(167,216,96, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container1 {
+    /* margin-top: 2vh; */
+    width: 22vw;
+    height: 48vh;
+    background-color: whitesmoke;
+    border-radius: 7%;
+    z-index: 5;
+    position: relative;
+}   
+
+.logo{
+    width: 20vw;
+    height: 15vh;
+}
+
+.back-btn{
+    border: none;
+    width: 1.5vw;
+    height: 3.5vh;
+    margin: 3%;
+    background-color: whitesmoke;
+}
+
+.img-btn{
+    width: 100%;
+    height: 100%;
+}
+
+.form,.login_form{
+    width: 22vw;
+    justify-content: center;
+}
+
+.login{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login h3{
+    margin-bottom: 7%; 
+}
+
+.input-group{
+    position: relative;
+    width: auto;
+}
+
+
+.username,
+.password{
+    width: 85%;
+    margin-bottom: 3%;
+}   
+
+.rem-btn{
+    margin-left: 0%;
+}
+
+.login-btn{
+    width: 50%;
+    margin: 2%;
+}
+
+.pass-btn{
+    text-decoration: none;
+    color: white;
+}
+
+/* .form-floating:focus{
+    outline-color: green;
+}  */

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-image: url(images/bg.jpg) ;
+    justify-content: center;
+}
+
+.bg-colour {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(164,213,92, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container1 {
+    /* margin-top: 2vh; */
+    width: 22vw;
+    height: 42vh;
+    background-color: whitesmoke;
+    border-radius: 7%;
+    z-index: 5;
+    position: relative;
+}
+
+.logo{
+    width: 20vw;
+    height: 15vh;
+}
+
+.form,.login_form{
+    width: 22vw;
+    justify-content: center;
+}
+
+.login{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login h2{
+    margin: 7%;
+}
+
+.username,
+.password{
+    width: 85%;
+    margin-bottom: 3%;
+}
+
+.rem-btn{
+    margin-left: 0%;
+}
+
+.login-btn{
+    width: 50%;
+    margin: 2%;
+}
+
+.pass-btn{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2;
+}
+    
+.btn-success{
+    background-color: #a4d55c;
+}
