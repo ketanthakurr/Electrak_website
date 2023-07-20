@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-image: url(images/bg.jpg) ;
+    justify-content: center;
+}
+
+.bg-colour {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(167,216,96, 0.6));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container1 {
+    margin-top: 2vh;
+    width: 22vw;
+    height: 35vh;
+    background-color: whitesmoke;
+    border-radius: 7%;
+    z-index: 5;
+    position: relative;
+}
+
+.logo{
+    width: 20vw;
+    height: 15vh;
+}
+
+.form,.login_form{
+    width: 22vw;
+    justify-content: center;
+}
+
+.login{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 9%;
+}
+
+.username,
+.password{
+    width: 85%;
+    margin-bottom: 3%;
+}
+
+.rem-btn{
+    margin-left: 0%;
+}
+
+.login-btn{
+    width: 50%;
+    margin: 2%;
+}
