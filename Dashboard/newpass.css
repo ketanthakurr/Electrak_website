@@ -24,7 +24,7 @@ body{
 .container1 {
     /* margin-top: 2vh; */
     width: 22vw;
-    height: 48vh;
+    height: 54vh;
     background-color: whitesmoke;
     border-radius: 7%;
     z-index: 5;
@@ -76,15 +76,26 @@ body{
 .password{
     width: 85%;
     margin-bottom: 3%;
-}   
+}
+
+.rem-for{
+    width: 22vw;
+    display: flex;
+}
 
 .rem-btn{
-    margin-left: 0%;
+    margin-left: 7.5%;
+    justify-content: space-between;
+}
+
+.for-link{
+    /* flex: auto; */
+    margin-left: 25%;
 }
 
 .login-btn{
     width: 50%;
-    margin: 2%;
+    margin: 4%;
 }
 
 .pass-btn{
