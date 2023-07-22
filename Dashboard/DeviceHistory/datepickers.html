@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    } */
+
+
+    
+    .button4-container {
+      display: flex;
+      margin-top: 17px;
+      margin-left: 360px;
+      margin-right: 20px;
+    }
+
+    .button4-container button4 {
+      cursor: pointer;
+      margin: 0; 
+
+      color: #d9ecd9 !important;
+      background-color: #4d724c !important;
+      text-shadow: 0 -1px #80be7f;
+      box-shadow: inset 0 1px #73ab72;
+      border: 1px solid #334c33;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .button4-container button4:first-child {
+      border-top-left-radius: 4px; 
+    }
+
+    .button4-container button4:last-child {
+      border-top-right-radius: 4px; 
+    }
+
+    .button4-container button4:hover,
+    .button4-container button4.active{
+    background-color: #80be7f !important;
+    color: #d9ecd9 !important;
+}
+    .date-picker {
+      display: none;
+      margin-top: 17px;
+    }
+
+    .date-picker input {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .date-picker button4 {
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .dropdown0{
+        position: absolute;
+        /* right: 15rem; */
+        margin-left: 940px;
+        margin-top: 17px;
+    }
+
+    .dropdown0 select {
+      padding: 8px;
+      font-weight: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #333;
+    } 
+    @media screen and (max-width: 768px) {
+      .button4-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .date-picker {
+        margin-top: 10px; /* Adjusted margin for datepicker on smaller screens */
+      }
+
+      .dropdown0 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px; /* Additional top margin for better positioning */
+      }
+    }
+
+  </style>
+</head>
+<body class="ab">
+    <div class="button4-container">
+      <button4 onclick="showDatePicker('custom')">Custom</button4>
+      <button4 onclick="showDatePicker('day')">Day</button4>
+      <button4 onclick="showDatePicker('month')">Month</button4>
+      <button4 onclick="showDatePicker('year')">Year</button4>
+    </div>
+    
+    <div id="customDatePicker" class="date-picker">
+      <input type="date" id="firstDate" value="">
+      <input type="date" id="secondDate" value="">
+    </div>
+    
+    <div id="dayDatePicker" class="date-picker">
+      <input type="date" value="">
+    </div>
+    
+    <div id="monthDatePicker" class="date-picker">
+      <input type="month" value="">
+    </div>
+    
+    <div id="yearDatePicker" class="date-picker">
+      <input type="number" id="yearInput" value="">
+    </div>
+
+    <div class="dropdown0">
+        <select onchange="selectDropdownItem(this)">
+          <option value="DE00001" id="KWh">Meter Reading</option>
+          <option value="DE00002" id="KWh">Cumulative Meter Reading</option>
+          <option value="DE00803" id="W">Watts Total</option>
+          <option value="DE00804" id="W">Watts R phase</option>
+          <option value="DE00805" id="W">Watts Y phase</option>
+          <option value="DE00806" id="W">Watts B phase</option>
+          <option value="DE00011" id="PF">PF Avg(inst)</option>
+          <option value="DE00012" id="PF">PF R phase</option>
+          <option value="DE00813" id="PF">PF Y phase</option>
+          <option value="DE00814" id="PF">PF B phase</option>
+          <option value="DE00015" 1d="VA">VA total</option>
+          <option value="DE00016" 1d="VA">VA R phase</option>
+          <option value="DE00017" 1d="VA">VA Y phase</option>
+          <option value="DE00018" 1d="VA">VA B phase</option>
+          <option value="DE00019" 1d="V">VLL average</option>
+          <option value="DE00020" 1d="V">Vry phase</option>
+          <option value="DE00021" 1d="V">Vyb phase</option>
+          <option value="DE00022" 1d="V">Vbr phase</option>
+          <option value="DE00023" id="V">VLN average</option>
+          <option value="DE00024" id="V">V R phase</option>
+          <option value="DE00025" id="V">V Y phase</option>
+          <option value="DE00026" id="V">V B phase</option>
+          <option value="DE00027" id="A">Current average</option>
+          <option value="DE00028" id="A">Current R phase</option>
+          <option value="DE00029" id="A">Current Y phase</option>
+          <option value="DE00030" id="A">Current B phase</option>
+          <option value="DE00031" id="Hz">Frequency</option>
+          <option value="DE00032" id="Wh">Wh received</option>
+          <option value="DE00033" id="VAh">VAh received</option>
+        </select>
+    </div>
+
+<script>
+
+function showDatePicker(type) {
+    hideAllDatePickers();
+
+    // Show the selected date picker
+    if (type === 'custom') {
+        document.getElementById('customDatePicker').style.display = 'block';
+
+        // Set the default date to the current date for the custom date picker
+        const currentDate = new Date().toISOString().slice(0, 10);
+
+        const firstDateInput = document.getElementById('firstDate');
+        firstDateInput.addEventListener('change', updateSecondDateMin);
+    } else if (type === 'day') {
+        document.getElementById('dayDatePicker').style.display = 'block';
+
+        // Set the default date to the current date for the day date picker
+        document.getElementById('dayDatePicker').querySelector('input[type="date"]').value = new Date().toISOString().slice(0, 10);
+    } else if (type === 'month') {
+        document.getElementById('monthDatePicker').style.display = 'block';
+
+        // Set the default date to the current date for the month date picker
+        document.getElementById('monthDatePicker').querySelector('input[type="month"]').value = new Date().toISOString().slice(0, 7);
+    } else if (type === 'year') {
+        document.getElementById('yearDatePicker').style.display = 'block';
+
+        // Set the default year to the current year for the year date picker
+        document.getElementById('yearInput').value = new Date().getFullYear();
+    }
+
+    const buttons = document.querySelectorAll('.button4-container button4');
+    for (const button4 of buttons) {
+        if (button4.textContent.trim().toLowerCase() === type) {
+            button4.classList.add('active');
+        } else {
+            button4.classList.remove('active');
+        }
+    }
+
+}
+
+function hideAllDatePickers() {
+  var datePickers = document.getElementsByClassName('date-picker');
+  for (var i = 0; i < datePickers.length; i++) {
+    datePickers[i].style.display = 'none';
+  }
+}
+
+function updateSecondDateMin() {
+  const firstDateInput = document.getElementById('firstDate');
+  const secondDateInput = document.getElementById('secondDate');
+
+  // Set the minimum date for the second input to be the selected date of the first input
+  secondDateInput.min = firstDateInput.value;
+
+  // Clear the value of the second date input if it's before the first date
+  if (secondDateInput.value < firstDateInput.value) {
+    secondDateInput.value = '';
+  }
+}
+  </script>
+</body>
+</html>

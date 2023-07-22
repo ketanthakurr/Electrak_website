@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mt-4 {
+            margin-top: 1.5rem!important;
+        }
+        body {
+            height: 100%;
+            overflow: auto;
+            background-color: var(--Shade5);
+            color: var(--Shade2);
+            font-weight: 300;
+        }
+        :root {
+            --Shade1: #0d130d;
+            --Shade2: #1a2619;
+            --Shade3: #334c33;
+            --Shade4: #4d724c;
+            --Shade5: #5a8559;
+            --Shade6: #73ab72;
+            --Shade7: #80be7f;
+            --Shade8: #8dc58c;
+            --Shade9: #a6d2a5;
+            --ShadeA: #b3d8b2;
+            --ShadeB: #c0dfbf;
+            --ShadeC: #cce5cc;
+            --ShadeD: #d9ecd9;
+            --ShadeE: #e6f2e5;
+            --ShadeF: #f2f9f2;
+            --Text: var(--ShadeF);
+            --Border: var(--ShadeF);
+            --Accent: #146c43;
+            --AccentHighLight: #438969;
+        }
+
+        .col {
+            flex: 0 0 0%;
+        }
+        .row>* {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-top: var(--bs-gutter-y);
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: var(--bs-font-sans-serif);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .card {
+            border: none;
+        }
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 0.25rem;
+        }
+        .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(var(--bs-gutter-y) * -1);
+            margin-right: calc(var(--bs-gutter-x) * -.5);
+            margin-left: calc(var(--bs-gutter-x) * -.5);
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            border-bottom: 1px solid #0d130d;
+            padding: 5px;
+            color: var(--Shade2);
+        }
+        .card-title {
+            margin-bottom: 0.5rem;
+        }
+        user agent stylesheet
+        div {
+            display: block;
+        }
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: rgb(0 0 0 / 15%);
+            background-clip: border-box;
+            border: 0 solid transparent;
+            border-radius: 0.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 3px 3px 7px 0px rgb(8 8 8 / 39%);
+            padding: 10px;
+            /* height: 100%; */
+            height: 420px;
+            left: 20px;
+            width: 272px;
+        }
+        .p-1 {
+            padding: 0.25rem!important;
+        }
+        .m-1 {
+            margin: 0.25rem!important;
+        }
+        .alert-success {
+            color: #0f5132;
+            background-color: #82bc7f;
+            border-color: #badbcc;
+        }
+        .alert {
+            position: relative;
+            padding: 1rem 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+        element.style {
+            display: block;
+            box-sizing: border-box;
+            height: 300px;
+            width: 300px;
+        }
+
+        .chart{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .all{
+            margin-top: 10%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+/* 
+        @media screen and (max-width: 768px) {
+            .col {
+                max-width: 260px; 
+            }
+
+            .all {
+                flex-wrap: wrap; 
+            }
+
+            .chart {
+                margin-top: 10px;
+            }
+
+            .card {
+                margin-right: 5px;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-title">Alerts</div>
+                <div class="alert alert-success m-1 p-1">6 kWh at 18/04/2023 2:00 pm</div>
+                <div class="alert alert-success m-1 p-1">30 kWh at 18/04/202310:00 am</div>
+                <div class="alert alert-success m-1 p-1">50 kWh at 18/04/2023 10:00 am</div>
+                <div class="alert alert-success m-1 p-1">30 kWh at 18/04/202310:00 am</div>
+                <div class="alert alert-success m-1 p-1">6 kWh at 18/04/2023 2:00 pm</div>
+                <div class="alert alert-success m-1 p-1">30 kWh at 18/04/202310:00 am</div>
+                <div class="alert alert-success m-1 p-1">50 kWh at 18/04/2023 10:00 am</div>
+                <div class="alert alert-success m-1 p-1">30 kWh at 18/04/202310:00 am</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-title">Time Off Details</div>
+                <div class="alert alert-success m-1 p-1">30 mins on 18/04/2023</div>
+                <div class="alert alert-success m-1 p-1">10 mins on 17/04/2023</div>
+                <div class="alert alert-success m-1 p-1">50 mins on 17/04/2023</div>
+                <div class="alert alert-success m-1 p-1">30 mins on 12/04/2023</div>
+                <div class="alert alert-success m-1 p-1">30 mins on 18/04/2023</div>
+                <div class="alert alert-success m-1 p-1">10 mins on 17/04/2023</div>
+                <div class="alert alert-success m-1 p-1">50 mins on 17/04/2023</div>
+                <div class="alert alert-success m-1 p-1">30 mins on 12/04/2023</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-title">Cost Prediction</div>
+                <canvas id="doughnutChart" width="63px" height="78px"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="./DeviceHistory/chart1.js"></script>
+</body>
+</html>

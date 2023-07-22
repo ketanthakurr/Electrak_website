@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* .test-nav {
+      position: absolute;
+      top: 70px; 
+      left: 26%;
+      transform: translate(-50%, -50%);
+      background: #1b1b1b;
+      width: 340px;
+      height: 45px;
+      line-height: 30px;
+      padding: 8px 25px;
+      border-radius: 7px;
+      margin-left: 3.7rem;
+      margin-top: 8rem;
+      
+    } */
+
+    .test-nav {
+      position: relative;
+      top: -140px;
+      left: 9%;
+      /* margin-left: 40px; */
+      transform: translate(-50%, -50%);
+      background: #1b1b1b;
+      width: 340px;
+      height: 45px;
+      line-height: 30px;
+      padding: 8px 25px;
+      border-radius: 7px;
+      /*margin-left: 3.7rem;*/
+      margin-top: 8rem;
+      z-index: 1;
+    }
+
+
+    .test-nav label {
+      font-size: 22px;
+      color: white;
+      font-weight: 500;
+      display: block;
+      cursor: pointer;
+    }
+
+    .button3 span {
+      float: right;
+      line-height: 40px;
+      transition: 0.5s;
+    }
+
+    .button3 span.rotate {
+      transform: rotate(-180deg);
+    }
+
+    .test-nav ul {
+      position: absolute;
+      background: #1b1b1b;
+      list-style: none;
+      border-radius: 5px;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      display: none;
+    }
+
+    [id^=btn]:checked+ul {
+      display: block;
+    }
+
+    .test-nav .menu:before {
+      position: absolute;
+      content: '';
+      height: 20px;
+      width: 20px;
+      background: #1b1b1b;
+      right: 20px;
+      top: -10px;
+      transform: rotate(45deg);
+      z-index: -1
+    }
+
+    .test-nav ul li {
+      line-height: 40px;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .test-nav ul li label {
+      font-size: 18px;
+    }
+
+    .test-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+    }
+
+    .test-nav ul li a:hover,
+    .test-nav ul li label:hover {
+      color: #0d6efd;
+
+    }
+
+    .test-nav ul ul {
+      position: static;
+    }
+
+    .test-nav ul ul li {
+      line-height: 30px;
+      padding-left: 30px;
+      border-bottom: none;
+    }
+
+    .test-nav ul ul li a {
+      color: #e6e6e6;
+      font-size: 17px;
+    }
+
+    .test-nav ul li span {
+      font-size: 20px;
+      float: right;
+      margin-top: 10px;
+      padding: 0 10px;
+      transition: 0.5s;
+    }
+
+    .test-nav ul li span.rotate {
+      transform: rotate(-180deg);
+    }
+
+    .test-nav input {
+      display: none;
+    }
+
+    .test-nav ul li:hover>ul {
+      display: block;
+    }
+
+    .test-nav ul li.dropdown:hover>ul {
+      display: block;
+    }
+    .test-nav .active {
+      background-color: #5a8559;
+      background-color: #4B4B4B;
+
+    }
+
+    /* #testContent2 {
+      position: relative;
+      left: 9%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+      width: 100%;
+      max-width: 340px; 
+    }
+    @media screen and (max-width: 768px) {
+      #testContent2 {
+        left: 50%;
+        top: 100px;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      #testContent2 {
+      }
+    } */
+  </style>
+</head>
+
+<body>
+  <nav class="test-nav">
+    <label for="btn" class="button3 my-button3">Tech Mahindra Phase 3
+      <span class="fas fa-caret-down"></span>
+    </label>
+    <input type="checkbox" id="btn">
+    <ul class="menu">
+      <li class="dropdown">
+        <label for="btn-2" class="first my-button3">Block 1
+          <span class="fas fa-caret-down"></span>
+        </label>
+        <input type="checkbox" id="btn-2">
+        <ul>
+          <li>
+            <label for="btn-4" class="third my-button3">1st Floor
+              <span class="fas fa-caret-down"></span>
+            </label>
+            <input type="checkbox" id="btn-4">
+            <ul>
+              <li class="button3-item"><a href="#">TIM Department</a></li>
+              <li class="button3-item"><a href="#">Repair Department</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <label for="btn-5" class="four my-button3">3rd Floor
+              <span class="fas fa-caret-down"></span>
+            </label>
+            <input type="checkbox" id="btn-5">
+            <ul>
+              <li class="button3-item"><a href="#">Asset Department</a></li>
+              <li class="button3-item"><a href="#">ODC</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <label for="btn-3" class="second my-button3">Block 5
+          <span class="fas fa-caret-down"></span>
+        </label>
+        <input type="checkbox" id="btn-3">
+        <ul>
+          <li>
+            <label for="btn-6" class="five my-button3">Ground Floor
+              <span class="fas fa-caret-down"></span>
+            </label>
+            <input type="checkbox" id="btn-6">
+            <ul>
+              <li class="button3-item"><a href="#">Makers Lab</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    $(document).ready(function() {
+      $('nav .button3').click(function() {
+        $('nav .button3 span').toggleClass("rotate");
+      });
+  
+      $('nav ul li .first').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+          $(this).parents('.dropdown').children('ul').slideDown(600);
+        } else {
+          $(this).parents('.dropdown').children('ul').slideUp(600);
+        }
+        $('nav ul li .first span').toggleClass("rotate");
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('nav ul li .second').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+          $(this).parents('.dropdown').children('ul').slideDown(600);
+        } else {
+          $(this).parents('.dropdown').children('ul').slideUp(600);
+        }
+        $('nav ul li.second span').toggleClass("rotate");
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('nav ul li .third').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+          $(this).parents('.dropdown').children('ul').slideDown(600);
+        } else {
+          $(this).parents('.dropdown').children('ul').slideUp(600);
+        }
+        $('nav ul li .third span').toggleClass("rotate");
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('nav ul li .four').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+          $(this).parents('.dropdown').children('ul').slideDown(600);
+        } else {
+          $(this).parents('.dropdown').children('ul').slideUp(600);
+        }
+        $('nav ul li .four span').toggleClass("rotate");
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('nav ul li .five').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+          $(this).parents('.dropdown').children('ul').slideDown(600);
+        } else {
+          $(this).parents('.dropdown').children('ul').slideUp(600);
+        }
+        $('nav ul li .five span').toggleClass("rotate");
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('.button3-item').click(function() {
+        var isActive = $(this).hasClass("active");
+        $('nav ul li .active').removeClass("active");
+        if (!isActive) {
+          $(this).addClass("active");
+        }
+        console.log("Button Text:", $(this).text()); // Display the button text in the console
+      });
+  
+      $('nav ul li.dropdown, nav ul li.dropdown > label').on('mouseenter', function() {
+        if ($(this).hasClass("active")) return false;
+        $(this).children('ul').slideDown(600);
+      }).on('mouseleave', function() {
+        if ($(this).hasClass("active")) return false;
+        $(this).children('ul').slideUp(600);
+      });
+    });
+  </script>
+  
+</body>
+
+</html>
