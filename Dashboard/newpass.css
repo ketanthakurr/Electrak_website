@@ -24,8 +24,8 @@ body{
 .container1 {
     /* margin-top: 2vh; */
     width: 22vw;
-    height: 54vh;
-    background-color: whitesmoke;
+    height: 56vh;
+    background-color: rgb(216, 213, 213);
     border-radius: 7%;
     z-index: 5;
     position: relative;
